@@ -1,2 +1,4 @@
 *.dart
 /.DS_Store
+/build/app
+/build/ios
