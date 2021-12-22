@@ -1,0 +1,1 @@
+ /Users/oldcyber/development/projects/qrtools/.dart_tool/flutter_gen/gen_l10n/app_localizations_en.dart /Users/oldcyber/development/projects/qrtools/.dart_tool/flutter_gen/gen_l10n/app_localizations.dart:  /Users/oldcyber/development/projects/qrtools/l10n.yaml /Users/oldcyber/development/projects/qrtools/lib/src/localization/app_en.arb
