@@ -2,7 +2,7 @@ def appname = "Runner" //DON'T CHANGE THIS. This refers to the flutter 'Runner' 
 def xcarchive = "${appname}.xcarchive"
 
 pipeline {
-    agent { label 'android' } //Change this to whatever your flutter jenkins nodes are labeled.
+    agent { label 'android' } //Исполнять удалённо на ноде с именем android
     environment {
         DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer/"  //This is necessary for Fastlane to access iOS Build things.
         PATH = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/oldcyber/development/flutter/bin:/Users/oldcyber/Library/Android/sdk//tools:/Users/oldcyber/Library/Android/sdk//platform-tools:/Applications/Xcode.app/Contents/Developer"
@@ -23,9 +23,14 @@ pipeline {
                 sh "flutter doctor -v"
             }
         }
+        stage ('Run Flutter code analyze') {
+            steps {
+                sh "flutter analyze"
+            }
+        }
         stage ('Run Flutter Tests') {
             steps {
-                sh "flutter test --coverage test/logic_tests.dart"
+                sh "flutter test --coverage -r expanded"
             }
         }
         stage ('Flutter Build APK') {
