@@ -1,0 +1,6 @@
+{
+  "appTitle": "qrtools",
+  "@appTitle": {
+    "description": "Заголовок приложения"
+  }
+}
